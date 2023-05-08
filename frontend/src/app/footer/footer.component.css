@@ -1,0 +1,14 @@
+.footer-container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    background-color: indigo;
+    color: whitesmoke;
+}
+
+.footer-container p {
+    padding: 0 20px;
+}

@@ -1,0 +1,35 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    max-height: 80vh;
+}
+
+#profile {
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    min-width: 50%;
+    box-shadow: 0 0 10px black;
+    overflow: auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+.field-name {
+    font-weight: bold;
+}
+
+.order-item {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+#total {
+    text-align: end;
+    padding-right: 20px;
+    font-weight: bold;
+}

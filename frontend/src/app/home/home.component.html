@@ -1,0 +1,19 @@
+<div id="category-menu">
+    <p>
+        <span>Categories:</span>
+        <mat-button-toggle-group name="filter" aria-label="Category Filter" (change)="updateCategoryFilter(group.value)" #group="matButtonToggleGroup">
+            <mat-button-toggle value="">All</mat-button-toggle>
+            <mat-button-toggle *ngFor="let category of categories"
+                [value]="category.id">{{category.categoryName}}</mat-button-toggle>
+        </mat-button-toggle-group>
+    </p>
+</div>
+<div class="card-container">
+    <div *ngFor="let product of products" class="card">
+        <img [src]="product.imageUrl" style="width:100%">
+        <h1>{{product.productName}}</h1>
+        <p class="price">${{product.price}}</p>
+        <p>{{product.description}}</p>
+        <p><button (click)="addItemToCart(product)">Add to Cart</button></p>
+    </div>
+</div>

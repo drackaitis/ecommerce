@@ -1,0 +1,17 @@
+<header>
+    <div id="header-container">
+        <h1>Portfolio: E-Commerce</h1>
+        <div id="nav-container">
+            <nav>
+                <a routerLink="/home">Home</a>
+                <a *ngIf="isLoggedIn" routerLink="/profile">Profile</a>
+                <a *ngIf="isLoggedIn && (userRole$ | async) === 'CUSTOMER'" routerLink="/shopping-cart">Shopping
+                    Cart</a>
+                <a *ngIf="isLoggedIn && (userRole$ | async) === 'ADMIN'" routerLink="/admin-dashboard">Dashboard</a>
+                <a *ngIf="isLoggedIn" (click)="onClick()" routerLink="/home">Logout</a>
+                <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+                <a *ngIf="!isLoggedIn" routerLink="/register">Register</a>
+            </nav>
+        </div>
+    </div>
+</header>

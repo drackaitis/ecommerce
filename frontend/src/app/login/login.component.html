@@ -1,0 +1,23 @@
+<div id="login-window">
+    <div id="login-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h2>Login</h2>
+            <div class="login-field-container">
+                <input class="login-field" type="email" name="email" placeholder="E-Mail" formControlName="email">
+            </div>
+            <div class='validation-error' *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+                <div *ngIf="loginForm.controls['email'].errors?.['required']">You need to enter your email</div>
+                <div *ngIf="loginForm.controls['email'].errors?.['email']">You must enter a valid email</div>
+            </div>
+            <div class="login-field-container">
+                <input class="login-field" type="password" name="password" placeholder="Password" formControlName="password">
+            </div>
+            <div class='validation-error' *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                <div *ngIf="loginForm.controls['password'].errors?.['required']">You need to enter your password</div>
+            </div>
+            <div id="login-button-container">
+                <button type="submit" class="submit-button">Sign In</button>
+            </div>
+        </form>
+    </div>
+</div>

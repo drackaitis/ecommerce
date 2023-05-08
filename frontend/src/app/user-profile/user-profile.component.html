@@ -1,0 +1,25 @@
+<div class="profile-container">
+    <div id="profile" *ngIf="user$ | async as user">
+        <h1>My Profile</h1>
+        <h2>Personal Information</h2>
+        <ul>
+            <li><span class="field-name">First Name: </span>{{user!.firstName}}</li>
+            <li *ngIf="user!.lastName"><span class="field-name">Last Name: </span>{{user!.lastName}}</li>
+            <li><span class="field-name">Email: </span>{{user!.email}}</li>
+            <br>
+            <li><span class="field-name">Your role: </span>{{user!.role}}</li>
+        </ul>
+        <h2>Orders:</h2>
+        <div  *ngFor="let order of orders">
+            <h3>Order ID: {{order.id}}</h3>
+            <ul>
+                <li class="order-item" *ngFor="let item of order.items">
+                    <p>Product: {{item.product.productName}}</p>
+                    <p>Qty: {{item.quantity}}</p>
+                    <p>Subtotal: ${{item.price}}</p>
+                </li>
+            </ul>
+            <p id="total">Total: ${{order.total}}</p>
+        </div>
+    </div>
+</div>
